@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  website1:
+    build:
+      context: .
+      dockerfile: Dockerfileweb1
+    ports:
+      - "80:80"
+    container_name: website1
+    restart: unless-stopped
+    mem_limit: 100M
+    cpus: '0.50'
+    
+  website2:
+    build:
+      context: .
+      dockerfile: Dockerfileweb2
+    ports:
+      - "81:80"
+    container_name: website2
+    restart: unless-stopped
+    mem_limit: 100M
+    cpus: '0.50'
